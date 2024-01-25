@@ -1,0 +1,19 @@
+.container {
+    background-color: grey;
+    height: 90vh;
+    width: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    margin: 20px;
+    align-self: flex-start;
+}
+
+.fill {
+    background-color: black;
+    width: 5px;
+    transition: all 1s;
+}

@@ -1,4 +1,4 @@
-import { Event } from "../data/types"
+import { Event } from "../types/types"
 
 interface IProps {
     event: Event

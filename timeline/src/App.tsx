@@ -1,25 +1,14 @@
-
 import './App.css'
-import { EventVisualizer } from './types/EventVisualizer'
+import { Timeline } from './components/Timeline'
 import { events } from './data/events_data'
 
 function App() {
 
-  const EventsList = events.map(event => {
-    return (
-      <li>
-        <EventVisualizer
-        event= {event}
-        />
-      </li>
-    )
-  })
+
 
   return (
     <>    
-      <ul>
-        {EventsList}
-      </ul>
+      <Timeline dates={events.map( event => event.date)} />
     </>
   )
 }

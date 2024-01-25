@@ -1,0 +1,12 @@
+.layout {
+    display: grid;
+    grid-template-columns: 100px auto;
+    
+}
+
+.event { 
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
