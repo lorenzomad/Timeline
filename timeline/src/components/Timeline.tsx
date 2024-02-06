@@ -76,7 +76,7 @@ export const Timeline = ({dates}: IProps) => {
 
     return (
         <div className="layout">
-            <ProgressBar percentage =  {percentage_passed}/>
+            <ProgressBar percentage =  {percentage_passed} date={dates[index]}/>
         
             <div className="page" style={{backgroundColor: color}}>
                 <div className="holes"></div>

@@ -1,4 +1,9 @@
 .container {
+    display: flex;
+    flex-direction: row;
+}
+
+.progress-bar {
     background-color: grey;
     height: 90vh;
     width: 5px;
@@ -7,12 +12,32 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
-    flex: 1;
     margin: 20px;
+    &::after {
+        content:"";
+        display:block;
+        width:10px;
+        border-bottom:1px dashed yellow;
+    }
 }
+
+
+
 
 .fill {
     background-color: black;
-    width: 5px;
+    width: 100%;
     transition: all 1s;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.date {
+    position: relative;
+
+    transition: transform 1s;
 }

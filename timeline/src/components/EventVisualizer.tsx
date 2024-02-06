@@ -9,9 +9,9 @@ export const EventVisualizer = ({event}: IProps) => {
 
     return (
         <div className="event">
-            <h1>{event.title}</h1>
-            <h2> {event.date.toDateString()} </h2>
-            <h2>{event.location}</h2>
+            <h2>Event: {event.title}</h2>
+            <h2>When: {event.date.toDateString()} </h2>
+            <h2>Where: {event.location}</h2>
             <iframe  
             className="map"
             src={event.mapurl} width="600" height="450" style={{border:0}} loading="lazy"/>
