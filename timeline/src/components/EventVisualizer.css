@@ -1,4 +1,15 @@
 .event {
-    grid-column: 2 / 4;
-    grid-row: 2;
+    padding-top: 6px;
+    padding-left: 56px;
+    padding-right: 16px;
+    line-height: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 19px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+.map {
+    max-width: 80vw;
+    max-height: 30vh;
 }

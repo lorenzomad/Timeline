@@ -78,11 +78,13 @@ export const Timeline = ({dates}: IProps) => {
         <div className="layout">
             <ProgressBar percentage =  {percentage_passed}/>
         
-            <div className="page" style={{backgroundColor:color}}>
+            <div className="page" style={{backgroundColor: color}}>
                 <div className="holes"></div>
                 <button className="previous" onClick={previousPage}> Previous Date </button>
                 <button className="next" onClick={nextPage}> Next Date </button>
-                <EventVisualizer event={events.filter(event => event.date === date)[0]} />
+                <div className="pattern">
+                    <EventVisualizer event={events.filter(event => event.date === date)[0]} />
+                </div>
             </div>
         </div>
     )

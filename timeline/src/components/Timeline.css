@@ -8,18 +8,37 @@
 .page { 
     aspect-ratio: 3/2;
     display: grid;
+    position: relative;
+    max-height: 100vh;
     flex: 1;
-    grid-template-columns: 25px 1fr 1fr;
+    grid-template-columns: 45px 1fr 1fr;
     grid-template-rows: 50px auto;
     border: solid 1px grey;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: 0px 0px 5px 0px #888;
+    padding-top: 40px;
+    padding-bottom: 40px;
     transition: box-shadow .3s;
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.70) 0px 8px 20px;
     }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 40px;
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: rgba(255,0,0,0.6);
+    }
     
-    
+}
+
+
+.pattern {
+    background-image: repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 24px, teal 25px);
+    grid-column: 2 / 4;
+    grid-row: 2; 
 }
 
 @keyframes disappear{
@@ -61,8 +80,6 @@
     background: radial-gradient(ellipse at center, #ffbdd7 0%, #ffbdd7 30%, transparent 30%);
     background-size: 20px 20px;
     background-repeat: repeat-y;
-    background-position: center center;
-    border-right: dotted 1px grey;
 }
 
 
@@ -75,5 +92,7 @@
     grid-column: 3;
     grid-row: 1;
 }
+
+
 
 
