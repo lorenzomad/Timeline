@@ -8,6 +8,8 @@
     letter-spacing: 1px;
     word-spacing: 5px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 h2 {
