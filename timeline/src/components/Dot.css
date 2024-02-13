@@ -6,4 +6,5 @@
     border-radius: 100%;
     margin: auto;
     position: relative;
+    transition: all 1s;
 }
