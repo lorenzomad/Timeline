@@ -20,6 +20,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: timeline/package-lock.json
     - run: npm ci
+    - run: git remote add origin https://github.com/lorenzomad/Timeline.git
     - run: npm run predeploy
     - run: npm run deploy
     - uses: actions/checkout@v4
