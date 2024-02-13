@@ -1,0 +1,23 @@
+name: deploy to github pages
+
+on:
+  push:
+    branches:
+    - main
+
+jobs: 
+  deploy:
+    name: deploy to gh-pages
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v3
+    - run: npm ci
+    - run: npm run predeploy
+    - run: npm run deploy
+    - uses: actions/checkout@v4
+      with: 
+        ref: gh-pages
+    # replace the incorrect imports
+    - run: sed -i -e 's+/assets+./assets+g' index.html
+      
