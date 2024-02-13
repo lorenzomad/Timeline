@@ -38,7 +38,7 @@ export const events : Event[] = [
     },
 
     {
-        title: 'Center',
+        title: 'Center of the world',
         date: new Date('22 February 2021'),
         location: 'Center',
         coordinates: [0, 0],
