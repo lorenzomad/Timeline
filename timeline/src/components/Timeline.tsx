@@ -5,6 +5,7 @@ import { events } from "../data/events_data"
 import { differenceInDays } from "../utils/datefunction"
 import './Timeline.css'
 import { colors } from "../data/notebook_colors"
+import { WorldMap } from "./WorldMap"
 
 interface IProps {
     dates: Date []
@@ -57,6 +58,7 @@ export const Timeline = ({dates}: IProps) => {
         <div className="layout">
             <ProgressBar percentage =  {percentage_passed} date={dates[index]}/>
         
+            {/* should move all the page to a different object for clarity */}
             <div className="page appear" style={{backgroundColor: color}}>
                 <div className="holes"></div>
                 <button className="previous" onClick={previousPage}> Previous Date </button>
@@ -65,6 +67,8 @@ export const Timeline = ({dates}: IProps) => {
                     <EventVisualizer event={events.filter(event => event.date === date)[0]} />
                 </div>
             </div>
+        
+            <WorldMap event = {events.filter(event=> event.date===date)[0]}/>
         </div>
     )
 

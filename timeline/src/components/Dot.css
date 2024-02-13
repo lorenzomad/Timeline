@@ -1,0 +1,9 @@
+.dot {
+    aspect-ratio: 1/1;
+    height: 0.5rem;  
+    background-color: yellow;
+    border: 1px dotted red;
+    border-radius: 100%;
+    margin: auto;
+    position: relative;
+}
