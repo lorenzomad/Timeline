@@ -3,29 +3,14 @@ name: deploy to github pages
 on:
   push:
     branches:
-    - main
+    - gh-pages
 
 jobs: 
-  deploy:
-    name: deploy to gh-pages
-    defaults:
-      run:
-        working-directory: timeline
+  update-imports:
+    name: update imports 
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 20.x
-        cache: 'npm'
-        cache-dependency-path: timeline/package-lock.json
-    - run: npm ci
-    - run: git remote set-url origin https://github.com/lorenzomad/Timeline.git
-    - run: npm run predeploy
-    - run: npm run deploy
-    - uses: actions/checkout@v4
-      with: 
-        ref: gh-pages
     # replace the incorrect imports
     - run: sed -i -e 's+/assets+./assets+g' index.html
       
