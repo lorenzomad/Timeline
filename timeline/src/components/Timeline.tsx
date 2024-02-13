@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ProgressBar } from "./ProgressBar"
 import { EventVisualizer } from "./EventVisualizer"
 import { events } from "../data/events_data"
@@ -15,21 +15,6 @@ export const Timeline = ({dates}: IProps) => {
     // current index to scroll through the dates
     const [index, setIndex] = useState(0)
 
-    //appear animation
-    const appearAnimation = () => {
-        // this is a bit of a hack, probably would need to use useeffect here
-        let page: Element;
-        setTimeout(() => {
-            page = document.getElementsByClassName('page')[0]
-            page.className += ' appear'
-        }, 1);
-        setTimeout(() => {
-            page.className = page.className.replace(' appear', '')
-        }, 1000);
-    }
-
-    appearAnimation()
-
     const date = dates[index]
     const startDate = dates[0]
     const endDate = dates[dates.length - 1]
@@ -44,10 +29,7 @@ export const Timeline = ({dates}: IProps) => {
         page.className += ' disappear'
         setTimeout(() => {
             increaseDate()    
-            page.className = page.className.replace('disappear', 'appear')
-        }, 1000);
-        setTimeout(() => {
-            page.className= page.className.replace(' appear', '')
+            page.className = page.className.replace('disappear', "")
         }, 1000);
     }
 
@@ -56,10 +38,7 @@ export const Timeline = ({dates}: IProps) => {
         page.className += ' disappear'
         setTimeout(() => {
             decreaseDate()    
-            page.className = page.className.replace('disappear', 'appear')
-        }, 1000);
-        setTimeout(() => {
-            page.className= page.className.replace(' appear', '')
+            page.className = page.className.replace('disappear', '')
         }, 1000);
     }
 
@@ -78,7 +57,7 @@ export const Timeline = ({dates}: IProps) => {
         <div className="layout">
             <ProgressBar percentage =  {percentage_passed} date={dates[index]}/>
         
-            <div className="page" style={{backgroundColor: color}}>
+            <div className="page appear" style={{backgroundColor: color}}>
                 <div className="holes"></div>
                 <button className="previous" onClick={previousPage}> Previous Date </button>
                 <button className="next" onClick={nextPage}> Next Date </button>
