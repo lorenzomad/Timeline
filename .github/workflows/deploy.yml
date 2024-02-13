@@ -8,6 +8,9 @@ on:
 jobs: 
   deploy:
     name: deploy to gh-pages
+    defaults:
+      run:
+        working-directory: frontend
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
