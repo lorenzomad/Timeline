@@ -5,9 +5,6 @@ Timeline of a relationship
 https://lorenzomad.github.io/Timeline/
 
 # How to deploy 
-use the following lines:
+use the following command:
 
-```npm run predeploy```
-
-follow with 
 ```npm run deploy```
