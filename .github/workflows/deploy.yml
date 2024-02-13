@@ -2,14 +2,14 @@ name: deploy to github pages
 
 on:
   push:
-    branches: gh-pages
+    branches: main
 
 jobs: 
   update-imports:
     name: update imports 
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - run: actions/checkout@v4
     # replace the incorrect imports
-    - run: sed -i -e 's+/assets+./assets+g' index.html
+    - run: npm run deploy
       
