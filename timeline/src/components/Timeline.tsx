@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ProgressBar } from "./ProgressBar"
 import { EventVisualizer } from "./EventVisualizer"
 import { events } from "../data/events_data"
