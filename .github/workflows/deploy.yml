@@ -10,7 +10,7 @@ jobs:
     name: deploy to gh-pages
     defaults:
       run:
-        working-directory: frontend
+        working-directory: timeline
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
